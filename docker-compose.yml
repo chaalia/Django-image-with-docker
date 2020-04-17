@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  django:
+    build: ./
+    command: python manage.py runserver 0.0.0.0:8080
+    volumes:
+      - ./app/:/usr/src/app/
+    ports:
+      - 8080:8080
+    tty: true
+    stdin_open: true
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=labo_user
+      - POSTGRES_PASSWORD=labo
+      - POSTGRES_DB=labo_db
+volumes:
+  postgres_data:
