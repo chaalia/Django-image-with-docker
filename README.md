@@ -1,1 +1,1 @@
-# Django-projects
+# Django-image-with-docker
