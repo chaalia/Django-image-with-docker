@@ -9,7 +9,7 @@ django-environ==0.4.5
 pytz==2018.7
 django-debug-toolbar==1.11.1
 sqlparse==0.2.4
-werkzeug==0.15.3
+werkzeug==2.2.3
 django-extensions==2.2.5
 easy-thumbnails==2.7
 black
